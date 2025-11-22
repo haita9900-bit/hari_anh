@@ -1,0 +1,133 @@
+
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hồ sơ - Nguyễn Hải Anh</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap" role="application">
+
+    <aside class="sidebar" aria-label="Sidebar">
+      <img class="avatar" src="./gojo-satoru-8sz62hlsg1epni6l.jpg" alt="Avatar">
+      <div class="who">
+        <h2>Nguyễn Hải Anh</h2>
+        <p class="muted">Sinh viên IT</p>
+      </div>
+
+      <nav class="menu" role="navigation" aria-label="Main menu">
+        <button class="active" data-target="home"><span class="dot"></span>Trang Chủ</button>
+        <button data-target="info"><span class="dot"></span>Thông Tin</button>
+        <button data-target="profile"><span class="dot"></span>Tiểu Sử</button>
+        <button data-target="contact"><span class="dot"></span>Liên Hệ</button>
+      </nav>
+
+      <div class="footer">© <span id="year"></span> • <a href="#">hazi anh</a></div>
+    </aside>
+
+    <main class="content">
+      <header class="header">
+        <div>
+          <div class="title">Hồ sơ cá nhân</div>
+          <div class="small muted"></div>
+        </div>
+
+      </header>
+
+     
+      <section id="home" class="page active" tabindex="0">
+        <div class="hero">
+          <div>
+            <div class="big">Nguyễn Hải Anh</div>
+            <div class="role muted">Sinh viên IT • Cybersecurity</div>
+            <div style="margin-top:18px">
+              <a href="#profile" class="tag" style="text-decoration:none">Xem Tiểu Sử →</a>
+            </div>
+          </div>
+          <div style="margin-left:auto; text-align:right; color:var(--muted)">
+            <div>Đang sống ở: Hà Nội</div>
+            <div style="margin-top:10px">Kỹ năng chính: html,css,..</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Giới thiệu ngắn</h3>
+          <p>
+        Mình là một sinh viên IT thích nghiên cứu các sản phẩm về phần mềm bảo mật và tìm ra lỗ hỏng của các trang web.
+          </p>
+        </div>
+      </section>
+
+      <section id="info" class="page" tabindex="0">
+        <div class="info-grid">
+          <div class="card">
+            <h3>Thông tin cá nhân</h3>
+            <p><strong>Tuổi:</strong> 18 • <strong>Quốc tịch:</strong> Việt Nam<br>
+               <strong>Địa chỉ:</strong> Tây Mỗ, Nam Từ Liêm, Hà Nội<br>
+               <strong>Email:</strong> haicube207@gmail.com</p>
+          </div>
+
+          <div class="card">
+            <h3>Công việc</h3>
+            <p>Phát triển phần mềm,nghiên cứu về bảo mật tìm lỗ hỏng.</p>
+            <h3 style="margin-top:12px">Đối tác</h3>
+            <div style="display:flex; gap:8px; margin-top:10px">
+              <img src="./408894-Kali-Linux-Backtrack-Linux-Linux-blue.png" alt="partner" style="border-radius:8px" width="100%">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile" class="page" tabindex="0">
+        <h3 style="margin-top:6px">Học Vấn</h3>
+        <div class="timeline">
+          <div class="event">
+            <div class="year">2025<br><span class="muted">Đại Học Đại Nam</span></div>
+            <div class="desc card"><h4>lập trình cơ bản</h4><p>thiết kế web và hệ thống máy tính.</p></div>
+
+          </div>
+
+        <h3 style="margin-top:18px">Kỹ Năng</h3>
+        <div class="skills">
+          <div class="skill"><div class="top"><span>JavaScript</span><span>0%</span></div><div class="bar" data-value="0"><i></i></div></div>
+          <div class="skill"><div class="top"><span>Python</span><span>0%</span></div><div class="bar" data-value="0"><i></i></div></div>
+          <div class="skill"><div class="top"><span>Java</span><span>0%</span></div><div class="bar" data-value="0"><i></i></div></div>
+          <div class="skill"><div class="top"><span>HTML/CSS</span><span>20%</span></div><div class="bar" data-value="20"><i></i></div></div>
+          <div class="skill"><div class="top"><span>Css</span><span>20%</span></div><div class="bar" data-value="20"><i></i></div></div>
+        </div>
+
+        <h3 style="margin-top:18px">Website & Tags</h3>
+        <div class="tags">
+          <span class="tag">chưa có web hoàn chỉnh</span>
+        </div>
+
+        <h3 style="margin-top:18px">Kinh Nghiệm</h3>
+        <div class="exp-grid">
+          <div class="job card"><h4>2025 • Đại Học Đại Nam</h4><p>UI/UX Designer — Thiết kế giao diện và trải nghiệm.</p></div>
+        </div>
+      </section>
+
+      <section id="contact" class="page" tabindex="0">
+        <div class="card">
+          <h3>Liên Hệ</h3>
+          <p>Email: haicube207@gmail.com<br>Điện thoại: 098 6931 896<br>Địa chỉ: Tây Mỗ, Nam Từ Liêm, Hà Nội</p>
+        </div>
+      </section>
+
+    </main>
+
+ <div id="chat-bubble">💬</div>
+
+
+<!-- Chat Box -->
+<div id="chat-box">
+<div id="chat-header">Chat Bot</div>
+<div id="chat-body"></div>
+<input id="chat-input" placeholder="Nhập tin nhắn..." onkeydown="sendMessage(event)">
+</div>
+  
+<script src="index.js"> </script>
+</body>
+</html>

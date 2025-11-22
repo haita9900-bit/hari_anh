@@ -1,0 +1,167 @@
+ :root{
+      --bg:#0b0b0c; --panel:#0f0f10; --muted:#9aa0a6; --accent:#ff8b1a; --glass: rgba(255,255,255,0.03);
+      --max-width:1100px; --gap:20px; --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,#030305 0%, #070710 100%); color:#e9eef1;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      display:flex; justify-content:center; padding:40px 18px;
+    }
+
+    /* Container */
+    .wrap{
+      width:100%; max-width:var(--max-width); display:flex; gap:var(--gap);
+    }
+
+    /* SIDEBAR */
+    aside.sidebar{
+      width:240px; background:linear-gradient(180deg,var(--panel), #0b0b0d); border-radius:var(--radius);
+      padding:22px; box-shadow:0 6px 30px rgba(3,3,3,0.6); flex-shrink:0; position:relative;
+      display:flex; flex-direction:column; align-items:center; gap:18px;
+    }
+    .avatar{
+      width:86px; height:86px; border-radius:50%; object-fit:cover; border:3px solid rgba(255,255,255,0.06);
+      background:linear-gradient(135deg,#222 0%, #111 100%);
+    }
+    .who{ text-align:center }
+    .who h2{ font-size:18px; margin:6px 0 0 }
+    .who p{ margin:6px 0 0; color:var(--muted); font-size:13px }
+
+    nav.menu{ width:100%; display:flex; flex-direction:column; gap:8px; margin-top:6px }
+    nav.menu button{
+      background:transparent; color:inherit; border:0; text-align:left; padding:10px 12px; border-radius:10px;
+      cursor:pointer; font-size:15px; width:100%; transition:all .18s ease; color:#cfe6ff;
+      display:flex; align-items:center; gap:12px;
+    }
+    nav.menu button:hover{ transform:translateX(6px); background:var(--glass) }
+    nav.menu button.active{ background:linear-gradient(90deg, rgba(255,139,26,0.12), rgba(255,139,26,0.04)); box-shadow:inset 0 0 0 1px rgba(255,139,26,0.04) }
+
+    .menu .dot{ width:10px; height:10px; border-radius:50%; background:transparent; flex-shrink:0 }
+    .menu button.active .dot{ background:var(--accent); box-shadow:0 0 12px rgba(255,139,26,0.25) }
+
+    .sidebar .footer{ margin-top:auto; font-size:12px; color:var(--muted); text-align:center }
+    .sidebar .footer a{ color:var(--muted); text-decoration:none }
+
+    /* MAIN */
+    main.content{
+      flex:1; min-height:420px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius); padding:26px; box-shadow:0 6px 30px rgba(2,2,2,0.55);
+      overflow:hidden; position:relative;
+    }
+
+    .header{ display:flex; align-items:center; justify-content:space-between; gap:14px }
+    .header .title{ font-size:20px; font-weight:600 }
+    .header .small{ color:var(--muted); font-size:13px }
+
+    /* Pages */
+    .page{ display:none; opacity:0; transform:translateY(8px); transition:all .36s cubic-bezier(.2,.9,.2,1) }
+    .page.active{ display:block; opacity:1; transform:none }
+
+    /* HOME */
+    .hero{ display:flex; align-items:center; gap:24px; padding:40px 0 }
+    .hero .big{ font-size:48px; font-weight:700; letter-spacing: -1px }
+    .hero .role{ color:var(--muted); margin-top:8px }
+
+    /* INFO */
+    .info-grid{ display:grid; grid-template-columns:1fr 320px; gap:22px }
+    .card{ background:rgba(255,255,255,0.02); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.02) }
+    .card h3{ margin:0 0 8px; font-size:16px }
+    .card p{ color:var(--muted); font-size:14px; line-height:1.6 }
+
+    /* PROFILE (timeline + skills) */
+    .timeline{ display:flex; flex-direction:column; gap:18px }
+    .event{ display:flex; gap:16px }
+    .event .year{ width:120px; color:var(--muted); font-size:13px }
+    .event .desc h4{ margin:0 0 6px }
+    .event .desc p{ margin:0; color:var(--muted); font-size:14px }
+
+    .skills{ display:flex; flex-direction:column; gap:12px; max-width:620px }
+    .skill{ display:flex; flex-direction:column; gap:6px }
+    .skill .top{ display:flex; justify-content:space-between; font-size:13px }
+    .bar{ height:10px; background:rgba(255,255,255,0.04); border-radius:999px; overflow:hidden }
+    .bar > i{ display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--accent), #ffd6b3); border-radius:inherit; transition:width 1s ease }
+
+    /* tags */
+    .tags{ display:flex; flex-wrap:wrap; gap:10px }
+    .tag{ background:rgba(255,255,255,0.02); padding:8px 12px; border-radius:10px; font-size:13px; color:var(--muted); border:1px solid rgba(255,255,255,0.02) }
+
+    /* EXPERIENCE cards */
+    .exp-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; margin-top:12px }
+    .job{ padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); border:1px solid rgba(255,255,255,0.02) }
+    .job h4{ margin:0 0 6px }
+    .job p{ margin:0; color:var(--muted); font-size:13px }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .wrap{ flex-direction:column; align-items:stretch }
+      aside.sidebar{ width:100%; flex-direction:row; padding:14px; align-items:center }
+      nav.menu{ flex-direction:row; gap:6px; overflow:auto }
+      nav.menu button{ white-space:nowrap; padding:8px 10px }
+      main.content { padding:18px }
+      .info-grid{ grid-template-columns:1fr }
+      .hero{ flex-direction:column; align-items:flex-start }
+    }
+
+body {
+background: #000;
+color: #fff;
+margin: 0;
+font-family: Arial;
+}
+
+
+/* ==== Chat Bubble ==== */
+#chat-bubble {
+position: fixed;
+right: 20px;
+bottom: 20px;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: orange;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 0 10px #000;
+z-index: 999;
+}
+
+
+/* ==== Chat Box ==== */
+#chat-box {
+position: fixed;
+right: 20px;
+bottom: 100px;
+width: 300px;
+height: 400px;
+background: #111;
+border: 2px solid orange;
+border-radius: 10px;
+display: none;
+flex-direction: column;
+z-index: 999;
+}
+#chat-header {
+background: orange;
+padding: 10px;
+text-align: center;
+font-weight: bold;
+}
+#chat-body {
+flex: 1;
+padding: 10px;
+overflow-y: auto;
+}
+#chat-input {
+border: none;
+outline: none;
+width: 100%;
+padding: 10px;
+background: #222;
+color: #fff;
+}
